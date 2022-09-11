@@ -1,30 +1,43 @@
-name: pr checker
+name: check-pull-request
 
 on: [pull_request]
 
 jobs:
-  build:
+  run:
     runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions-ecosystem/action-size@v2
-      id: size
+    - id: checkout
+      name: Checkout
+      uses: actions/checkout@v2
 
-    - uses: actions-ecosystem/action-remove-labels@v1
+    - id: action-size
+      name: Size
+      uses: actions-ecosystem/action-size@v2
+
+    - id: action-remove-labels
+      name: Remove labels
+      uses: actions-ecosystem/action-remove-labels@v1
       with:
           github_token: ${{ github.token }}
-          labels: ${{ steps.size.outputs.stale_labels }}
-    - uses: jwalton/gh-find-current-pr@v1
-      id: findPr
+          labels: ${{ steps.action-size.outputs.stale_labels }}
+
+    - id: find-pr
+      name: Find PR
+      uses: jwalton/gh-find-current-pr@v1
       with:
           state: open
-    - run: echo "Your PR is ${PR}"
-      if: success() && steps.findPr.outputs.number
-      env:
-        PR: ${{ steps.findPr.outputs.pr }}
-    - uses: moevm/pull-requests-checker@main
+
+    - id: print-pr-number
+      name: PR number
+      if: success() && steps.find-pr.outputs.pr
+      run: echo "Your PR number is ${{ steps.find-pr.outputs.pr }}"
+
+    - id: check-pr
+      name: Check PR
+      if: success() && steps.find-pr.outputs.pr
+      uses: moevm/pull-requests-checker@main
       with:
-          github-token: ${{ github.token }}
-          number-of-pr: ${{ steps.findPr.outputs.pr }}
-          repository-name: ${{ github.event.repository.full_name }}
-          author: ${{ github.event.sender.login }}
+        github-token: ${{ github.token }}
+        number-of-pr: ${{ steps.find-pr.outputs.pr }}
+        repository-name: ${{ github.event.repository.full_name }}
+        author: ${{ github.event.sender.login }}
