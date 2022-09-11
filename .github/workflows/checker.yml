@@ -1,0 +1,30 @@
+name: pr checker
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions-ecosystem/action-size@v2
+      id: size
+
+    - uses: actions-ecosystem/action-remove-labels@v1
+      with:
+          github_token: ${{ github.token }}
+          labels: ${{ steps.size.outputs.stale_labels }}
+    - uses: jwalton/gh-find-current-pr@v1
+      id: findPr
+      with:
+          state: open
+    - run: echo "Your PR is ${PR}"
+      if: success() && steps.findPr.outputs.number
+      env:
+        PR: ${{ steps.findPr.outputs.pr }}
+    - uses: moevm/pull-requests-checker@main
+      with:
+          github-token: ${{ github.token }}
+          number-of-pr: ${{ steps.findPr.outputs.pr }}
+          repository-name: ${{ github.event.repository.full_name }}
+          author: ${{ github.event.sender.login }}
