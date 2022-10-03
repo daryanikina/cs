@@ -30,7 +30,7 @@ def check_surface(point1, point2, point3):
 
 def check_rotation(position, angle):
     position_x_y = position[:-1]
-    rotation_matrix = numpy.array([[numpy.cos(angle), -numpy.sin(angle)],
+    rotation_matrix = numpy.array([[numpy.cos(angle),-numpy.sin(angle)],
                                    [numpy.sin(angle), numpy.cos(angle)]])
     new_position_x_y = numpy.matmul(rotation_matrix, position_x_y)
     new_position_x_y = round_matrix(new_position_x_y)
