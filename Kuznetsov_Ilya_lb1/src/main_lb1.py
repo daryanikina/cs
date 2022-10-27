@@ -8,9 +8,7 @@ def len_way(a, b):
 
 
 def check_crossroad(robot, point1, point2, point3, point4):
-    if (point3[0] >= robot[0] >= point1[0]) and (point4[1] >= robot[1] >= point2[1]):
-        return True
-    return False
+    return (point3[0] >= robot[0] >= point1[0]) and (point4[1] >= robot[1] >= point2[1])
 
 
 def check_collision(coefficients):
