@@ -25,5 +25,5 @@
 | Bogatov       | Ilya         | Cuga77          |       |       |       |      |
 | Dvikov        | Daniil       | daniildvikov    |       |       |       |      |
 | Malyuskaya    | Darya        | DaryaMalyuskaya |       |       |       |      |
-| Ilyasov       | Mark         | monsier-chess   |       |       |       |      |
+| Ilyasov       | Mark         | monsier-chess   | 5     |       |       |      |
 | BatOchir      | Bilguundalai | Bilguundalai99  |       |       |       |      |
