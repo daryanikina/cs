@@ -18,8 +18,8 @@ def check_surface(point1: np.ndarray, point2: np.ndarray, point3: np.ndarray) ->
     arr = np.array((point1[2], point2[2], point3[2]))
     try:
         return np.round(LA.solve(mx, arr), 2)
-    except LA.LinAlgError:
-        pass  # Return None if matrix is Singular
+    except LA.LinAlgError: # matrix is Singular
+        return None
 
 
 def check_rotation(vec: np.ndarray, rad: float) -> np.ndarray:
