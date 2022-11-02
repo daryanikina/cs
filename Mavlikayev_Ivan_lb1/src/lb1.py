@@ -2,18 +2,18 @@ import numpy as np
 
 
 def check_crossroad(robot, point1, point2, point3, point4):
-	if robot[0] >= point1[0] and robot[0] <= point2[0] and robot[1] >= point1[1] and robot[1] <= point4[1]:
-		return True
-	return False
+	return ((robot[0] >= point1[0]) and (robot[0] <= point2[0]) and (robot[1] >= point1[1]) and (robot[1] <= point4[1]))
 
 
 def check_collision(coefficients):
 	answer = []
 	for i in range (len(coefficients)):
-		for j in range (len(coefficients)):
+		for j in range (i + 1, len(coefficients)):
 			Matrix = np.array([coefficients[i][:2], coefficients[j][:2]])
 			if (np.linalg.det(Matrix) != 0):
 				answer.append((i, j))
+				answer.append((j, i))
+	answer.sort()
 	return answer
 
 
