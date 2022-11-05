@@ -1,7 +1,7 @@
 # cs-2022-2381
 | Surname       | Name         | github          | lb1   | lb2   | lb3   | cw   |
 |:--------------|:-------------|:----------------|:------|:------|:------|:-----|
-| Sokolov       | Sergey       | SerejS          |       |       |       |      |
+| Sokolov       | Sergey       | SerejS          | 4     |       |       |      |
 | Polezhayev    | Andrey       | Andrew2657      |       |       |       |      |
 | Kuznetsov     | Ilya         | enshxx          |       |       |       |      |
 | Ryzhikov      | Ivan         | TeUm3048        |       |       |       |      |
@@ -9,7 +9,7 @@
 | Malyuskaya    | Darya        | DaryaMalyuskaya |       |       |       |      |
 | Lisitsky      | Stepan       | Stefachik       |       |       |       |      |
 | Zazulya       | Ilya         | Ascens1ve       |       |       |       |      |
-| Tishchenko    | Artem        | Arttish         |       |       |       |      |
+| Tishchenko    | Artem        | Arttish         | 3     |       |       |      |
 | Krivov        | Savely       | SaveliyKrivov   |       |       |       |      |
 | Dolotov       | Nikita       | Do1otov         |       |       |       |      |
 | Mavlikayev    | Ivan         | IvanMavlikaev   |       |       |       |      |
