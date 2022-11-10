@@ -6,7 +6,7 @@ def swap(img, x0,y0,x1,y1,width):
     new_img = img.copy()
     new_img.paste(area2, (x0, y0))
     new_img.paste(area1,(x1,y1))
-    return new_img.rotate(-90)
+    return new_img.rotate(-90) 
 
 def avg_color(img, x0, y0, x1, y1):
     new_img = img.copy()
