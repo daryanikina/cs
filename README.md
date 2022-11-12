@@ -3,12 +3,12 @@
 |:--------------|:-------------|:----------------|:------|:------|:------|:-----|
 | Sokolov       | Sergey       | SerejS          | 4     |       |       |      |
 | Polezhayev    | Andrey       | Andrew2657      |       |       |       |      |
-| Kuznetsov     | Ilya         | enshxx          |       |       |       |      |
-| Ryzhikov      | Ivan         | TeUm3048        |       |       |       |      |
-| Komossky      | Yegor        | Fel1-of         |       |       |       |      |
+| Kuznetsov     | Ilya         | enshxx          | 4     |       |       |      |
+| Ryzhikov      | Ivan         | TeUm3048        | 4     |       |       |      |
+| Komossky      | Yegor        | Fel1-of         | 4     |       |       |      |
 | Malyuskaya    | Darya        | DaryaMalyuskaya |       |       |       |      |
 | Lisitsky      | Stepan       | Stefachik       |       |       |       |      |
-| Zazulya       | Ilya         | Ascens1ve       |       |       |       |      |
+| Zazulya       | Ilya         | Ascens1ve       | 4     |       |       |      |
 | Tishchenko    | Artem        | Arttish         | 3     |       |       |      |
 | Krivov        | Savely       | SaveliyKrivov   |       |       |       |      |
 | Dolotov       | Nikita       | Do1otov         |       |       |       |      |
@@ -16,10 +16,10 @@
 | Potapova      | Darya        | Daryapotapovaa  |       |       |       |      |
 | Shlyakhtin    | Maksim       | mrekk-hub       |       |       |       |      |
 | Slabnova      | Darya        | DashaSl         |       |       |       |      |
-| Gazukina      | Darya        | dariaomnom      |       |       |       |      |
+| Gazukina      | Darya        | dariaomnom      | 4     |       |       |      |
 | Zametayev     | Mikhail      | qwers451        |       |       |       |      |
 | Anikina       | Darya        | daryanikina     |       |       |       |      |
-| Fomina        | Alina        | wiwiwooii       |       |       |       |      |
+| Fomina        | Alina        | wiwiwooii       | 2     |       |       |      |
 | Malenkovskaya | Yekaterina   | mKathrin        |       |       |       |      |
 | Aparina       | Tamila       | Tamilka17       |       |       |       |      |
 | Bogatov       | Ilya         | Cuga77          |       |       |       |      |
