@@ -1,9 +1,7 @@
 import numpy as np
 
 def check_crossroad(robot, point1, point2, point3, point4):
-    if (point1[0] <= robot[0] <= point3[0]) and (point1[1] <= robot[1] <= point3[1]):
-        return True
-    return False
+    return (point1[0] <= robot[0] <= point3[0]) and (point1[1] <= robot[1] <= point3[1])
 
 def check_collision(coefficients):
     fl_matrix = np.delete(coefficients, 2, 1)
