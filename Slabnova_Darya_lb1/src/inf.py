@@ -6,19 +6,16 @@ def check_crossroad(robot, point1, point2, point3, point4):
     yfirst = max(point1[1], point2[1], point3[1])
     ysecond = min(point1[1], point2[1], point3[1])
     x, y = robot
-    return  xfirst >= x and x >= xsecond and  yfirst >= y and y >=ysecond
+    return  xfirst >= x >= xsecond and  yfirst >= y >=ysecond
 
 def check(a):
-    if np.linalg.matrix_rank(a) !=2:
-        return False
-    else:
-        return True
+    return np.linalg.matrix_rank(a) == 2
 
 def check_collision(coefficients):
     clsins = []
     for i in range(len(coefficients)):
         tmp = coefficients[i][:2]
-        for j in range(0, len(coefficients)):
+        for j in range(i, len(coefficients)):
             if check(np.vstack((tmp, coefficients[j][:2]))):
                 clsins.append((i, j))
     return clsins
