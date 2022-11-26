@@ -3,15 +3,15 @@
 |:--------------|:-------------|:----------------|:------|:------|:------|:-----|
 | Sokolov       | Sergey       | SerejS          | 4     |       |       |      |
 | Polezhayev    | Andrey       | Andrew2657      |       |       |       |      |
-| Kuznetsov     | Ilya         | enshxx          | 4     |       |       |      |
+| Kuznetsov     | Ilya         | enshxx          | 4     | 4     |       |      |
 | Ryzhikov      | Ivan         | TeUm3048        | 4     |       |       |      |
 | Komossky      | Yegor        | Fel1-of         | 4     |       |       |      |
 | Malyuskaya    | Darya        | DaryaMalyuskaya |       |       |       |      |
 | Lisitsky      | Stepan       | Stefachik       |       |       |       |      |
 | Zazulya       | Ilya         | Ascens1ve       | 4     |       |       |      |
 | Tishchenko    | Artem        | Arttish         | 3     |       |       |      |
-| Krivov        | Savely       | SaveliyKrivov   |       |       |       |      |
-| Dolotov       | Nikita       | Do1otov         |       |       |       |      |
+| Krivov        | Savely       | SaveliyKrivov   | 3     |       |       |      |
+| Dolotov       | Nikita       | Do1otov         | 2     |       |       |      |
 | Mavlikayev    | Ivan         | IvanMavlikaev   |       |       |       |      |
 | Potapova      | Darya        | Daryapotapovaa  |       |       |       |      |
 | Shlyakhtin    | Maksim       | mrekk-hub       |       |       |       |      |
