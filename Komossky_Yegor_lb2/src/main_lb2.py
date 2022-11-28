@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw
 # Задача 1
 def triangle(img, x0, y0, x1, y1, x2, y2, thickness, color, fill_color):
     draw = ImageDraw.Draw(img)
-    if fill_color == None:
+    if fill_color is None:
         draw.polygon([(x0,y0), (x1, y1), (x2,y2)], fill = None, outline = tuple(color), width=thickness)
     else: draw.polygon([(x0,y0), (x1, y1), (x2,y2)], fill = tuple(fill_color), outline = tuple(color), width=thickness)
     return img
@@ -12,16 +12,13 @@ def triangle(img, x0, y0, x1, y1, x2, y2, thickness, color, fill_color):
 def change_color(img, color):
     count= {}
     for i in img.getdata():
-        if not (i in count):
+        if i not in count:
             count[i] = 0
         count[i] += 1
     max_color = max(count, key=count.get)
-    draw = ImageDraw.Draw(img)
-    width, height = img.size
-    for i in range(width):
-        for j in range(height):
-            if img.getpixel((i, j)) == max_color:
-                draw.point((i, j), tuple(color))
+    arr = np.array(img)
+    arr[arr == max_color] = color
+    img = Image.fromarray(arr)
     return img
 
 # Задача 3
@@ -32,9 +29,3 @@ def collage(img, N, M):
         for y in range(0, height, img.size[1]):
             img1.paste(img, (x, y))
     return img1
-
-img = Image.open(r'C:\Users\Fel1off\Pictures\ex.jpg')
-
-#triangle(img, 300, 200, 200, 400, 400, 400, 2, (0, 0, 0), None).show()
-#change_color(img, [0, 0, 0]).show()
-collage(img, 3, 5).show()
