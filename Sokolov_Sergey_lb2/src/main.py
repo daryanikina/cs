@@ -83,9 +83,3 @@ def find_rect_and_recolor(image, old_color, new_color):
     image = Image.fromarray(arr)
 
     return image
-
-
-if __name__ == '__main__':
-    img = Image.open('C:\\Users\serej\Desktop\cs-2022-2381\Sokolov_Sergey_lb2\\test.bmp')
-    img = find_rect_and_recolor(img, (255, 255, 255), (128, 128, 128))
-    img.save('C:\\Users\serej\Desktop\cs-2022-2381\Sokolov_Sergey_lb2\\res.bmp')
