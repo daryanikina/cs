@@ -41,7 +41,7 @@ def find_biggest_rect(image, color):
     arr = np.array(image).tolist()
     for i in range(len(arr)):
         for j in range(len(arr[i])):
-            arr[i][j] = 1 if arr[i][j] == list(color) else 0
+            arr[i][j] = int(arr[i][j] == list(color))
     arr = np.array(arr)
 
     # count max height
@@ -83,3 +83,9 @@ def find_rect_and_recolor(image, old_color, new_color):
     image = Image.fromarray(arr)
 
     return image
+
+
+if __name__ == '__main__':
+    img = Image.open('C:\\Users\serej\Desktop\cs-2022-2381\Sokolov_Sergey_lb2\\test.bmp')
+    img = find_rect_and_recolor(img, (255, 255, 255), (128, 128, 128))
+    img.save('C:\\Users\serej\Desktop\cs-2022-2381\Sokolov_Sergey_lb2\\res.bmp')
