@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw, ImageOps
 
 
+
 # Задача 1
 def user_func(image, x0, y0, x1, y1, fill, width):
 	draw = ImageDraw.Draw(image)
