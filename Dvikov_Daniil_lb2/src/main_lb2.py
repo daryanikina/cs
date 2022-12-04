@@ -14,11 +14,34 @@ def check_coords(image, x0, y0, x1, y1):
 def set_black_white(image, x0, y0, x1, y1):
     if not check_coords(image, x0, y0, x1, y1):
         return image
-
     cropped_image = image.crop((x0, y0, x1, y1))
     cropped_image = cropped_image.convert("1")
     image.paste(cropped_image, (x0, y0))
-
+    return image
+    
+def find_rect_and_recolor(image, old_color, new_color):
+    if not isinstance(old_color, tuple):
+        old_color = PIL.ImageColor.getrgb(old_color)
+    width, height = image.size
+    max_area = 0
+    best_xy = None
+    part = numpy.zeros(image.size, dtype=numpy.uint32)
+    for i in range(width):
+        for j in range(height):
+            part[i, j] = int(image.getpixel((i, j)) == old_color)
+    hist = numpy.zeros(height, dtype=numpy.uint32)
+    for i in range(width):
+        hist = numpy.multiply((hist + 1), part[i])
+        area, yy = max_area_histogram(hist)
+        if yy is not None:
+            width = area // (yy[1] - yy[0])
+            assert width == min(hist[yy[0] : yy[1]])
+        if area > max_area:
+            max_area = area
+            best_xy = (i + 1 - width, yy[0]), (i, yy[1] - 1)
+    if best_xy is not None:
+        draw = ImageDraw.Draw(image)
+        draw.rectangle(best_xy, fill=new_color, outline=new_color)
     return image
 def max_area_histogram(hist):
     stack = []
@@ -43,30 +66,4 @@ def max_area_histogram(hist):
         if area > max_area:
             max_area = area
             best_yy = yy
-
     return max_area, best_yy
-def find_rect_and_recolor(image, old_color, new_color):
-    if not isinstance(old_color, tuple):
-        old_color = PIL.ImageColor.getrgb(old_color)
-    width, height = image.size
-    max_area = 0
-    best_xy = None
-    part = numpy.zeros(image.size, dtype=numpy.uint32)
-    for i in range(width):
-        for j in range(height):
-            part[i, j] = int(image.getpixel((i, j)) == old_color)
-
-    hist = numpy.zeros(height, dtype=numpy.uint32)
-    for i in range(width):
-        hist = numpy.multiply((hist + 1), part[i])
-        area, yy = max_area_histogram(hist)
-        if yy is not None:
-            width = area // (yy[1] - yy[0])
-            assert width == min(hist[yy[0] : yy[1]])
-        if area > max_area:
-            max_area = area
-            best_xy = (i + 1 - width, yy[0]), (i, yy[1] - 1)
-    if best_xy is not None:
-        draw = ImageDraw.Draw(image)
-        draw.rectangle(best_xy, fill=new_color, outline=new_color)
-    return image
