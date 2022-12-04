@@ -18,7 +18,6 @@ def set_black_white(image, x0, y0, x1, y1):
     cropped_image = cropped_image.convert("1")
     image.paste(cropped_image, (x0, y0))
     return image
-    
 def find_rect_and_recolor(image, old_color, new_color):
     if not isinstance(old_color, tuple):
         old_color = PIL.ImageColor.getrgb(old_color)
