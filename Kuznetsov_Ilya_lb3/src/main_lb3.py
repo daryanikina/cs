@@ -19,7 +19,7 @@ table = {
     "found_c_a_a_start_c": {"a": ["a",N,"end"], "b" : ['a',N,"end"], ' ': ['a', N, "end"], 'c': ['a', N, "end"]},
     "found_c_a_b_start_c": {"a": ["b",N,"end"], "b" : ['b',N,"end"], ' ': ['b', N, "end"], 'c': ['b', N, "end"]},
 }
-mem = list(input())
+mem = list(input()) 
 state = "start"
 ind = 0
 while state != "end":
