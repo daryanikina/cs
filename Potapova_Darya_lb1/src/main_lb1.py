@@ -7,7 +7,7 @@ def check_crossroad(robot, point1, point2, point3, point4):
     x2, y2 = point2[0], point2[1]
     x3, y3 = point3[0], point3[1]
     x4, y4 = point4[0], point4[1]
-    return (x1 <= x <= x2) and (y1 <= y <= y4)
+    return ((x1 <= x <= x2) and (y1 <= y <= y4))
 
 
 def check_collision(coefficients):
