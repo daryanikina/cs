@@ -26,16 +26,14 @@ def turing(program: dict, tape: list, start: str) -> (list, str):
     cell = 0
     state = start
     res = ''
-    while True:
+    while program[state] != 'exit':
         res += state + ' '
         rows = program[state]
-        if rows == 'exit': break
         cur_row = rows[tape[cell]]
         tape[cell] = cur_row[0]
         cell += cur_row[1]
         state = cur_row[2]
     return tape, res
-
 
 
 print(*turing(table, list(input()), 'q0')[0], sep='')
