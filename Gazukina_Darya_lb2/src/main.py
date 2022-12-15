@@ -33,19 +33,14 @@ def swap(img, x0, y0, x1, y1, width):
 def avg_color(img, x0, y0, x1, y1):
     img_res = img.copy()
     arr = img_res.load()
-    img_shape = img_res.size
-
-    def end_of_img(xy, shape=img_shape):
-        if (xy[0] >= 0) and (xy[0] < shape[0]) and (xy[1] >= 0) and (xy[1] < shape[1]):
-            return True
-        else:
-            return False
+    shape = img_res.size
 
     for x in range(x0, x1+1):
         for y in range(y0, y1+1):
 
             pix_ind = ( (x-1,y-1), (x,y-1), (x+1,y-1), (x+1,y), (x+1,y+1), (x,y+1), (x-1,y+1), (x-1,y) )
-            pix_ind = tuple(filter(end_of_img, pix_ind))
+            check = lambda xy: ((xy[0] >= 0) and (xy[0] < shape[0]) and (xy[1] >= 0) and (xy[1] < shape[1]))
+            pix_ind = tuple(filter(check, pix_ind))
             pix = tuple(map(img.getpixel, ((i[0],i[1]) for i in pix_ind)))
 
             R, G, B = 0, 0, 0
