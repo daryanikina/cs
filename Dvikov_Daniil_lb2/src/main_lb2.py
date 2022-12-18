@@ -7,10 +7,7 @@ def user_func(image, x0, y0, x1, y1, fill, width):
     return image
 def check_coords(image, x0, y0, x1, y1):
     height, width=image.size
-    if ((height>=x1) and (x1>x0) and (x0>=0) and (width>=y1) and (y1>y0) and (y0>=0)):
-        return True
-    else:
-        return False
+    return (height>=x1) and (x1>x0) and (x0>=0) and (width>=y1) and (y1>y0) and (y0>=0)
 def set_black_white(image, x0, y0, x1, y1):
     if not check_coords(image, x0, y0, x1, y1):
         return image
