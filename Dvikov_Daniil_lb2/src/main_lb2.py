@@ -39,7 +39,7 @@ def find_rect_and_recolor(image, old_color, new_color):
         draw = ImageDraw.Draw(image)
         draw.rectangle(best_xy, fill=new_color, outline=new_color)
     return image
-def max_area_histogram(hist):
+def max_area_histogram(hist):   //hist
     stack = []
     max_area = 0
     best_yy = None
