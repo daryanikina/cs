@@ -1,13 +1,19 @@
 import numpy
 import PIL
 from PIL import Image, ImageDraw
+
+
 def user_func(image, x0, y0, x1, y1, fill, width):
     drawing = ImageDraw.Draw(image)
     drawing.line((x0, y0, x1, y1), fill, width)
     return image
+    
+    
 def check_coords(image, x0, y0, x1, y1):
     height, width=image.size
     return (height>=x1) and (x1>x0) and (x0>=0) and (width>=y1) and (y1>y0) and (y0>=0)
+    
+    
 def set_black_white(image, x0, y0, x1, y1):
     if not check_coords(image, x0, y0, x1, y1):
         return image
@@ -15,6 +21,8 @@ def set_black_white(image, x0, y0, x1, y1):
     cropped_image = cropped_image.convert("1")
     image.paste(cropped_image, (x0, y0))
     return image
+    
+    
 def find_rect_and_recolor(image, old_color, new_color):
     if not isinstance(old_color, tuple):
         old_color = PIL.ImageColor.getrgb(old_color)
@@ -39,6 +47,8 @@ def find_rect_and_recolor(image, old_color, new_color):
         draw = ImageDraw.Draw(image)
         draw.rectangle(best_xy, fill=new_color, outline=new_color)
     return image
+    
+    
 def max_area_histogram(hist):   //hist
     stack = []
     max_area = 0
