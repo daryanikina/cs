@@ -13,9 +13,7 @@ def user_func(image, x0, y0, x1, y1, fill, width):
 # Задача 2
 def check_coords(image, x0, y0, x1, y1):
     x, y = image.size
-    if (x >= x1) and (x1 > x0) and (x0 >= 0) and (y >= y1) and (y1 > y0) and (y0 >= 0):
-        return True
-    return False
+    return (x >= x1) and (x1 > x0) and (x0 >= 0) and (y >= y1) and (y1 > y0) and (y0 >= 0)
 
 
 def set_black_white(image, x0, y0, x1, y1):
